@@ -15,7 +15,7 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') {
-                    sh '''
+                    bat '''
                     sonar-scanner \
                       -Dsonar.projectKey=SonarQube-demo \
                       -Dsonar.sources=. \
