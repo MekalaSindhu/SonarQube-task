@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/MekalaSindhu/SonarQube-demo.git'
+                git 'https://github.com/MekalaSindhu/SonarQube-task.git'
             }
         }
 
