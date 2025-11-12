@@ -16,7 +16,7 @@ pipeline {
             steps {
                 withSonarQubeEnv('SonarQube') {
                     bat """
-                    "C:\\sonar-scanner-7.3.0.5189-windows\\bin\\sonar-scanner.bat" ^
+                    "C:\\sonar-scanner-7.3.0.5189-windows\bin\sonar-scanner.bat" ^
                       -Dsonar.projectKey=SonarQube-task ^
                       -Dsonar.sources=. ^
                       -Dsonar.host.url=http://192.168.7.10:9000 ^
