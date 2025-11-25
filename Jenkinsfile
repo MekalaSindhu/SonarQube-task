@@ -19,7 +19,7 @@ pipeline {
                     "C:\\sonar-scanner\\bin\\sonar-scanner.bat" ^
                       -Dsonar.projectKey=SonarQube-task ^
                       -Dsonar.sources=. ^
-                      -Dsonar.host.url=http://192.168.7.10:9000 ^
+                      -Dsonar.host.url=http://192.168.7.11:9000 ^
                       -Dsonar.login=%SONAR_AUTH_TOKEN%
                     """
                 }
