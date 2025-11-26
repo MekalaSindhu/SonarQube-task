@@ -20,7 +20,7 @@ pipeline {
                       -Dsonar.projectKey=SonarQube-task ^
                       -Dsonar.sources=. ^
                       -Dsonar.host.url=http://192.168.7.11:9000 ^
-                      -Dsonar.token=%SONAR_AUTH_TOKEN%
+                      -Dsonar.login=%SONAR_AUTH_TOKEN%
                     """
                 }
             }
