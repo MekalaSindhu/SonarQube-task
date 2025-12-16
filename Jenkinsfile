@@ -13,16 +13,20 @@ pipeline {
         }
 
         stage('SonarQube Analysis') {
-            steps {
-                withSonarQubeEnv('SonarQube') {
-                    bat """
-                    "C:\\sonar-scanner\\bin\\sonar-scanner.bat" ^
-                      -Dsonar.projectKey=SonarQube-task ^
-                      -Dsonar.sources=.
-                    """
-                }
+    steps {
+        withSonarQubeEnv('SonarQube') {
+            withCredentials([string(credentialsId: 'sonar-token', variable: 'SONAR_TOKEN')]) {
+                bat '''
+                C:\\sonar-scanner\\bin\\sonar-scanner.bat ^
+                -Dsonar.projectKey=SonarQube-task ^
+                -Dsonar.sources=. ^
+                -Dsonar.token=%SONAR_TOKEN%
+                '''
             }
         }
+    }
+}
+
 
         stage('Quality Gate') {
             steps {
